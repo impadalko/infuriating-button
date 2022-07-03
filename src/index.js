@@ -1,6 +1,7 @@
 class InfuriatingButton extends HTMLElement {
   constructor() {
     super()
+    this.hovering = false
 
     this.attachShadow({ mode: 'open' })
     const wrapper = document.createElement('button')
@@ -9,6 +10,26 @@ class InfuriatingButton extends HTMLElement {
     wrapper.appendChild(slot)
 
     this.shadowRoot.append(wrapper)
+
+    this.addEventListener('mouseenter', this.onMouseEnter)
+    this.addEventListener('mouseleave', this.onMouseLeave)
+
+    console.log(this)
+  }
+
+  onMouseEnter(event) {
+    this.hovering = true
+    setTimeout(() => {
+      if (this.hovering) console.log('Move not implemented yet')
+    }, this.moveTimeout)
+  }
+
+  onMouseLeave(event) {
+    this.hovering = false
+  }
+
+  connectedCallback() {
+    this.moveTimeout = this.getAttribute('move-timeout') ?? 200
   }
 }
 
