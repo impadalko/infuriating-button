@@ -17,14 +17,14 @@ class InfuriatingButton extends HTMLElement {
     console.log(this)
   }
 
-  onMouseEnter(event) {
+  onMouseEnter() {
     this.hovering = true
     setTimeout(() => {
       if (this.hovering) console.log('Move not implemented yet')
     }, this.moveTimeout)
   }
 
-  onMouseLeave(event) {
+  onMouseLeave() {
     this.hovering = false
   }
 
