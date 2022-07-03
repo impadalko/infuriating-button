@@ -1,0 +1,17 @@
+{
+  "name": "infuriating-buttons",
+  "version": "0.0.1",
+  "description": "A JS module to create really annoying buttons",
+  "main": "index.js",
+  "repository": "https://github.com/impadalko/infuriating-buttons",
+  "author": "Ivan Padalko",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "lint": "eslint --max-warnings 0 src/",
+    "prettier": "prettier src/** README.md"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "prettier": "^2.7.1"
+  }
+}
