@@ -8,7 +8,7 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "lint": "eslint --max-warnings 0 src/",
-    "prettier": "prettier src/** README.md"
+    "prettier": "prettier src/** README.md index.html"
   },
   "devDependencies": {
     "eslint": "^8.19.0",
