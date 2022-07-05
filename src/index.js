@@ -4,17 +4,15 @@ class InfuriatingButton extends HTMLElement {
     this.hovering = false
 
     this.attachShadow({ mode: 'open' })
-    const wrapper = document.createElement('button')
+    this.wrapper = document.createElement('button')
 
     const slot = document.createElement('slot')
-    wrapper.appendChild(slot)
+    this.wrapper.appendChild(slot)
 
-    this.shadowRoot.append(wrapper)
+    this.shadowRoot.append(this.wrapper)
 
     this.addEventListener('mouseenter', this.onMouseEnter)
     this.addEventListener('mouseleave', this.onMouseLeave)
-
-    console.log(this)
   }
 
   onMouseEnter() {
@@ -30,6 +28,18 @@ class InfuriatingButton extends HTMLElement {
 
   connectedCallback() {
     this.moveTimeout = this.getAttribute('move-timeout') ?? 200
+
+    const clazz = this.getAttribute('class')
+    if (clazz) {
+      this.wrapper.setAttribute('class', clazz)
+      this.removeAttribute('class')
+    }
+
+    const id = this.getAttribute('id')
+    if (id) {
+      this.wrapper.setAttribute('id', id)
+      this.removeAttribute('id')
+    }
   }
 }
 
