@@ -8,7 +8,12 @@ const getRandomFromArray = (possibleValues) => {
   return possibleValues[getRandomInt(0, possibleValues.length)]
 }
 
+const randomEvent = (probability) => {
+  return Math.random() < probability
+}
+
 export default {
   getRandomInt,
   getRandomFromArray,
+  randomEvent,
 }

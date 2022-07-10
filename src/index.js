@@ -21,10 +21,12 @@ class InfuriatingButton extends HTMLElement {
 
     this.addEventListener('mouseenter', this.onMouseEnter)
     this.addEventListener('mouseleave', this.onMouseLeave)
+    this.addEventListener('click', this.onClick, { capture: true })
   }
 
   connectedCallback() {
     this.moveTimeout = this.getAttribute('move-timeout') ?? 200
+    this.clickFailureProbability = this.getAttribute('click-failure-probability') ?? 0.05
 
     const clazz = this.getAttribute('class')
     if (clazz) {
@@ -76,6 +78,10 @@ class InfuriatingButton extends HTMLElement {
     root.style.setProperty(verticalOffsetVar, verticalOffset + movement.vertical)
 
     this.boundingBox = this.wrapper.getBoundingClientRect()
+  }
+
+  onClick(e) {
+    if (randomHelper.randomEvent(this.clickFailureProbability)) e.stopImmediatePropagation()
   }
 }
 
