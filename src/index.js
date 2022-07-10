@@ -27,6 +27,8 @@ class InfuriatingButton extends HTMLElement {
   connectedCallback() {
     this.moveTimeout = this.getAttribute('move-timeout') ?? 200
     this.clickFailureProbability = this.getAttribute('click-failure-probability') ?? 0.05
+    this.confirmationText =
+      this.getAttribute('confirmation-text') ?? 'Are you sure you want to click?'
 
     const clazz = this.getAttribute('class')
     if (clazz) {
@@ -81,7 +83,11 @@ class InfuriatingButton extends HTMLElement {
   }
 
   onClick(e) {
-    if (randomHelper.randomEvent(this.clickFailureProbability)) e.stopImmediatePropagation()
+    if (
+      randomHelper.randomEvent(this.clickFailureProbability) ||
+      !window.confirm(this.confirmationText)
+    )
+      e.stopImmediatePropagation()
   }
 }
 
