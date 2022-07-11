@@ -1,6 +1,6 @@
 {
   "name": "infuriating-button",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A JS module to create really annoying buttons",
   "main": "./src/index.js",
   "module": "./src/index.js",
@@ -11,7 +11,8 @@
   "scripts": {
     "lint": "eslint --max-warnings 0 src/",
     "prettier": "prettier src/** README.md index.html",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "postversion": "git push --tags && git push"
   },
   "devDependencies": {
     "eslint": "^8.19.0",
