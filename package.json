@@ -1,6 +1,6 @@
 {
   "name": "infuriating-button",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A JS module to create really annoying buttons",
   "main": "./src/index.js",
   "module": "./src/index.js",
