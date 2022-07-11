@@ -3,7 +3,7 @@ import randomHelper from './randomHelper'
 const horizontalOffsetVar = '--horizontal-offset'
 const verticalOffsetVar = '--vertical-offset'
 
-class InfuriatingButton extends HTMLElement {
+export class InfuriatingButton extends HTMLElement {
   constructor() {
     super()
     this.hovering = false

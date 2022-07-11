@@ -1,11 +1,11 @@
 {
-  "name": "infuriating-buttons",
+  "name": "infuriating-button",
   "version": "0.0.3",
   "description": "A JS module to create really annoying buttons",
   "main": "./src/index.js",
   "module": "./src/index.js",
   "type": "module",
-  "repository": "https://github.com/impadalko/infuriating-buttons",
+  "repository": "https://github.com/impadalko/infuriating-button",
   "author": "impadalko <dev@impadalko.com>",
   "license": "GPL-3.0-or-later",
   "scripts": {
