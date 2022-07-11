@@ -74,12 +74,16 @@ export class InfuriatingButton extends HTMLElement {
 
     const movement = randomHelper.getRandomFromArray(possibleMovements)
     const root = document.querySelector(':root')
-    const horizontalOffset = Number(root.style.getPropertyValue(horizontalOffsetVar)) || 0
-    const verticalOffset = Number(root.style.getPropertyValue(verticalOffsetVar)) || 0
-    root.style.setProperty(horizontalOffsetVar, horizontalOffset + movement.horizontal)
-    root.style.setProperty(verticalOffsetVar, verticalOffset + movement.vertical)
+    const horizontalOffset = this.parseProperty(root, horizontalOffsetVar)
+    const verticalOffset = this.parseProperty(root, verticalOffsetVar)
+    root.style.setProperty(horizontalOffsetVar, `${horizontalOffset + movement.horizontal}px`)
+    root.style.setProperty(verticalOffsetVar, `${verticalOffset + movement.vertical}px`)
 
     this.boundingBox = this.wrapper.getBoundingClientRect()
+  }
+
+  parseProperty(root, property) {
+    return Number(root.style.getPropertyValue(property).replace('px', '')) || 0
   }
 
   onClick(e) {
