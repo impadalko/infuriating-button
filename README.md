@@ -1,6 +1,6 @@
 # infuriating-button
 
-A web component to create infuriating buttons.
+A web component to create ~infuriating~ delightful buttons.
 
 ## Motivation
 
@@ -15,6 +15,16 @@ our daily lives as possible.
   to being faster than the layout changes
 - Mandatory confirmation modal: This way we can ensure that no misclicks happen
 - Random click failure: Makes your user to be always on its toes
+
+## Usage
+
+Add to your website:
+
+```html
+<script type="module" src="https://unpkg.com/infuriating-button@latest">
+```
+
+The tag `<infuriating-button>` will be then available and can be used as a regular button.
 
 ## Demo
 
