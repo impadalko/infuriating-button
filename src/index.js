@@ -1,4 +1,4 @@
-import randomHelper from './randomHelper'
+import randomHelper from './randomHelper.js'
 
 const horizontalOffsetVar = '--horizontal-offset'
 const verticalOffsetVar = '--vertical-offset'
